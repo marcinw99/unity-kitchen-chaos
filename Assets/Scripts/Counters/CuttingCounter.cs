@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter, IProgressController
 {
+    public static EventHandler OnAnyCut;
+    
     public event EventHandler<IProgressController.OnProgressChangedEventArgs> OnProgressChanged;
 
     public event EventHandler OnCut;
@@ -83,6 +85,7 @@ public class CuttingCounter : BaseCounter, IProgressController
                 cuttingProgress++;
                 
                 OnCut?.Invoke(this, EventArgs.Empty);
+                OnAnyCut?.Invoke(this, EventArgs.Empty);
                 OnProgressChanged?.Invoke(this, new IProgressController.OnProgressChangedEventArgs
                 {
                     progressNormalized = (float)cuttingProgress / applicableRecipe.cuttingProgressMax
