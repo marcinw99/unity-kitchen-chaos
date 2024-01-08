@@ -31,7 +31,6 @@ public class PlateCompleteVisual : MonoBehaviour
         {
             if (kitchenObjectSOGameObject.kitchenObjectSO == e.KitchenObjectSO)
             {
-                Debug.Log("enabling");
                 kitchenObjectSOGameObject.gameObject.SetActive(true);
             }
         }
