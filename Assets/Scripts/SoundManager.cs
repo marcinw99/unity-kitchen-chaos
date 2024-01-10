@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class SoundManager : MonoBehaviour
 {
     private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
-    
+
     public static SoundManager Instance { get; private set; }
 
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
@@ -80,6 +80,16 @@ public class SoundManager : MonoBehaviour
         PlaySound(audioClipRefsSO.footsteps, position, volume);
     }
 
+    public void PlayCountdownSound()
+    {
+        PlaySound(audioClipRefsSO.warning, Vector3.zero);
+    }
+    
+    public void PlayWarningSound(Vector3 position)
+    {
+        PlaySound(audioClipRefsSO.warning, position);
+    }
+
     public void ChangeVolume()
     {
         volume += 0.1f;
@@ -87,7 +97,7 @@ public class SoundManager : MonoBehaviour
         {
             volume = 0f;
         }
-        
+
         PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, volume);
         PlayerPrefs.Save();
     }

@@ -15,5 +15,5 @@ MonoBehaviour:
   input: {fileID: 11400000, guid: 45224cccf45c3d6498081e420c5f7584, type: 2}
   output: {fileID: 11400000, guid: cf5b5944fee2f674482a19be1847314a, type: 2}
   burned: {fileID: 11400000, guid: 5faa7f0d5ce6335418e7a63e050cc6c2, type: 2}
-  fryingTimerMax: 3
-  burningTimerMax: 5
+  fryingTimerMax: 5
+  burningTimerMax: 6
